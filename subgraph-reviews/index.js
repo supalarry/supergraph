@@ -11,7 +11,7 @@ const ReviewsAPI = require('./datasources/ReviewsApi');
 async function startApolloServer() {
   const server = new ApolloServer({schema: buildSubgraphSchema({ typeDefs, resolvers })});
 
-  const port = 4002;
+  const port = process.env.PORT || 4002;
   const subgraphName = 'reviews';
 
   try {
